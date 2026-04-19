@@ -11,6 +11,3 @@
     - name: This is Debug tasks 1
       debug:
         msg: "Hello from task 1"
-    - name: This is Debug tasks 2
-      debug:
-        msg: "Hello from task 2"
