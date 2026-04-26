@@ -1,5 +1,5 @@
 import os
-print("this is os import code")
+print("this is os import code to run in actions")
 a=15
 if a>10:
   print("a is greater")
