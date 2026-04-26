@@ -24,6 +24,8 @@ jobs:
           python-version: '3.11'
       - name: Env Variable Usage
         run: echo "User has selected ${{ inputs.sdlc_env }} and env value for AWS_REGION is $AWS_REGION"
+      - name: Secrets Usage
+        run: echo "Secret AWS_ACCESS_SECRET value is ${{ secrets.AWS_ACCESS_SECRET }}"
       - name: Execute Python script
         run: python test.py
       - name: Execute Shell script
