@@ -1,4 +1,8 @@
 name: Manual CI
+
+env:
+  AWS_REGION: "us-east-1"
+
 on:
   workflow_dispatch:
     inputs:
@@ -19,7 +23,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Env Variable Usage
-        run: echo "User has selected ${{ inputs.sdlc_env }}"
+        run: echo "User has selected ${{ inputs.sdlc_env }} and env value for AWS_REGION is $AWS_REGION"
       - name: Execute Python script
         run: python test.py
       - name: Execute Shell script
