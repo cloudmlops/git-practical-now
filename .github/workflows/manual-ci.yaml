@@ -1,0 +1,26 @@
+name: Hello World CI
+on:
+  workflow_dispatch:
+    inputs:
+      sdlc_env:
+        type: choice
+        options:
+          - dev
+          - qa
+          - prod
+jobs:
+  ScriptRunJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Env Variable Usage
+        run: echo "User has selected ${{ inputs.sdlc_env }}"
+      - name: Execute Python script
+        run: python test.py
+      - name: Execute Shell script
+        run: bash test.sh
