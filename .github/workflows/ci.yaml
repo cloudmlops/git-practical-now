@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  greet:
+  ScriptRunJob:
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
@@ -13,9 +13,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Execute main script
+      - name: Execute Python script
         run: python test.py
-      - name: Say Hello
-        run: echo "Hello from GitHub Actions!"
-      - name: Run Shell Commands
-        run: echo "This is shell step"
+      - name: Execute Shell script
+        run: bash test.sh
